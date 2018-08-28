@@ -1,10 +1,7 @@
-var express= require('express'); //incorpora biblioteca express
-var app= express();  //executa a função
-
-app.set('view engine', 'ejs');  //indica para o express que estamos ultilizando o ejs para que possa trabalhar em conjunto
 
 
 
+var app= require('./config/server'); //inclui e executa o modulo de configuração de servidor 
 
 
 app.get('/', function(req, res){      // parametros requisição e respostas =>quando acessar rota  / retorna um html especifico
@@ -19,9 +16,10 @@ app.get('/formulario_inclusao', function(req, res){      // parametros requisiç
         res.render('admin/form_add_noticia'); //com ejs
 });
 
+
 app.get('/noticias', function(req, res){      // parametros requisição e respostas =>quando acessar rota  / retorna um html especifico
     
-    //res.send("<html><body>Portal de Noticias de Tecnologia</body> </html>"); //=>sem ejs
+    //res.send("<html><body>Portal de Noticsias de Tecnologia</body> </html>"); //=>sem ejs
         res.render('noticias/noticias'); //com ejs
 });
 
