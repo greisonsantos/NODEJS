@@ -21,7 +21,7 @@ if (categoria=='/tecnologia'){
 }else if(categoria=='/beleza'){
 	      res.end("<html><body>Noticias de Beleza </body> </html>");    //resposta da requisição geralmente arquivos html
 }else{
-	   res.end("<html><body>Portal de notícias </body> </html>");    //resposta da requisição geralmente arquivos html
+	   res.end("<html><body>Portal de notícias 1 </body> </html>");    //resposta da requisição geralmente arquivos html
 
 }
  

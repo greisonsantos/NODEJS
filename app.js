@@ -1,27 +1,15 @@
 
-
-
 var app= require('./config/server'); //inclui e executa o modulo de configuração de servidor 
 
 
-app.get('/', function(req, res){      // parametros requisição e respostas =>quando acessar rota  / retorna um html especifico
-    
-    // res.send("<html><body>Portal de Noticias</body> </html>"); =>sem ejs
-    res.render('home/index'); //com ejs
-});
+//chamando modulos de rotas
+ var rotaNoticias= require('./App/routes/noticias'); //importando o modulo de rotas de noticias
+ rotaNoticias(app);  //executando o modulo de rotas
 
-app.get('/formulario_inclusao', function(req, res){      // parametros requisição e respostas =>quando acessar rota  / retorna um html especifico
-    
-    //res.send("<html><body>Portal de Noticias de Tecnologia</body> </html>"); //=>sem ejs
-        res.render('admin/form_add_noticia'); //com ejs
-});
+ var rotaHOme= require('./App/routes/home'); //importando o modulo de rotas de noticias
+ rotaHOme(app);  //executando o modulo de rotas
 
-
-app.get('/noticias', function(req, res){      // parametros requisição e respostas =>quando acessar rota  / retorna um html especifico
-    
-    //res.send("<html><body>Portal de Noticsias de Tecnologia</body> </html>"); //=>sem ejs
-        res.render('noticias/noticias'); //com ejs
-});
+ var rotaFormInclusao= require('./App/routes/form_inclusao')(app); //inclui o modulo ja executando
 
 app.listen(3000, function(){
 
