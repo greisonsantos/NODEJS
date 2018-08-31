@@ -1,18 +1,11 @@
+var app = require('./config/server');
 
-var app= require('./config/server'); //inclui e executa o modulo de configuração de servidor 
+var rotaNoticias = require('./app/routes/noticias')(app);
 
+var rotaHome = require('./app/routes/home')(app);
 
-//chamando modulos de rotas
- var rotaNoticias= require('./App/routes/noticias'); //importando o modulo de rotas de noticias
- rotaNoticias(app);  //executando o modulo de rotas
-
- var rotaHOme= require('./App/routes/home'); //importando o modulo de rotas de noticias
- rotaHOme(app);  //executando o modulo de rotas
-
- var rotaFormInclusao= require('./App/routes/form_inclusao')(app); //inclui o modulo ja executando
+var rotaFormInclusaoNoticia = require('./app/routes/form_inclusao_noticia')(app);
 
 app.listen(3000, function(){
-
- console.log("servidor rodando com express");
-
+    console.log("Servidor ON");
 });
