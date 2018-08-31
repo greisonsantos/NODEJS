@@ -1,18 +1,15 @@
-module.exports = function(app){
+  var bdConnection =  require('../../config/db_connection'); //recuperando o arquivo de conexão com banco
+
+
+    module.exports = function(app){
+
+    var connection = bdConnection(); //executando a função de coneção
     app.get('/noticias', function(req,res){
 
-        var mysql      = require('mysql');
-
-        var connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: '160597',
-            database: 'portal_noticias'
-        });
-
-        connection.query("select * from noticias", function(error, result){  //recebe dois parametros padroões 
-            res.send(result);
-        });
-
+            //primeiro parametro       //segundo e uma calback
+            connection.query("SELECT * FROM noticias", function(error, result){
+               // res.send(result);  imprimi na tela
+               res.render('noticias/noticias',{ noticias :result});  //envia para view
+            });
     });
-}
+    }

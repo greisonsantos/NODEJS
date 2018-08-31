@@ -7,6 +7,26 @@
 	<body>
 
 		<h1>Notícias</h1>
+		<caption>Titulo da minh Tabela</caption>
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>titulo</th>
+					<th>noticia</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- varrendo o vetor de json -->
+				<% for( var i=0; i< noticias.length; i++){ %>
+				<tr>
+					<td><%= noticias[i].id %></td>   <!-- imprimi na tela -->
+					<td><%= noticias[i].titulo%></td>
+					<td><%= noticias[i].noticia%></td>
+				</tr>
+				<% }%>
+			</tbody>
+		</table>
 
 	</body>
 </html>
