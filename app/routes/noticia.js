@@ -4,9 +4,9 @@ module.exports = function(app){
         //assim a conexão com o banco de dados so e estabelecido qunado se acessa essa rota
         var connection = app.config.db_connection();
 
-        var noticiaModel= app.app.models.noticiasModel;
+        var noticiaModel= new app.app.models.noticiasModel(connection);
 
-         noticiaModel.getNoticia(connection, function(error, result){
+         noticiaModel.getNoticia(function(error, result){
             res.render('noticias/noticia', { noticia : result });
         });
 

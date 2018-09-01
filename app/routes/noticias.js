@@ -21,9 +21,9 @@
 
          var connection = app.config.db_connection();
 
-         var noticiasModel=app.app.models.noticiasModel; //carrego a model a parti do autoloada carrregado no app
+         var noticiasModel= new app.app.models.noticiasModel(connection); //carrego a model a parti do autoloada carrregado no app
 
-            noticiasModel.getNoticias(connection, function(error, result){ //acessando a função dentro do modulo que recebe como parametro a conexao e calback
+            noticiasModel.getNoticias(function(error, result){ //acessando a função dentro do modulo que recebe como parametro a conexao e calback
             res.render('noticias/noticias', { noticias : result });
         });
 

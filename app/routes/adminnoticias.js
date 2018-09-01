@@ -14,9 +14,9 @@ module.exports = function(app){
         //salvar noticia
 
         var connection= app.config.db_connection(); //recuperando a conexao com banco de dados
-        var  model=  app.app.models.noticiasModel; //recuperando model de noticias
+        var  model=new  app.app.models.noticiasModel(connection); //recuperando model de noticias
 
-        model.salvarNoticia(noticia,connection, function(error, result){ //dados do form; conexao; e calback
+        model.salvarNoticia(noticia, function(error, result){ //dados do form; conexao; e calback
         	res.redirect('/noticias');
 
         })
