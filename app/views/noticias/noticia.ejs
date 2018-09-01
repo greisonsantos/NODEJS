@@ -2,11 +2,27 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
-			<title>Portal de notícias</title>
+			<title>Notícia</title>
 		</head>
 	<body>
 
 		<h1>Notícia</h1>
+		<caption>Titulo da minh Tabela</caption>
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>titulo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- varrendo o vetor de json -->
+				<tr>
+					<td><%= noticia[0].id %></td>   <!-- imprimi na tela -->
+					<td><%= noticia[0].titulo%></td>
+				</tr>
+			</tbody>
+		</table>
 
 	</body>
 </html>
