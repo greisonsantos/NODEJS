@@ -1,9 +1,10 @@
 
 var express = require('express'); //iniciando o mudulo do express
 var consign = require('consign'); //faço consign a olhar para dentro do diretorio routes e automaticamnete e realizado os requires
+var bodyParser= require('body-parser') //mudulo para reber dados de formularios
 
 var app = express();
-
+app.use(bodyParser.urlencoded({ extends:true})); //iniciando o modulo de tratativa de url
 
 app.set('view engine', 'ejs'); //indica que estou ultilizando ejs para rederizar as views
 app.set('views', './app/views'); //indica o caminho onde estar minha views
