@@ -14,8 +14,9 @@ app.set('views', './app/views'); //indica o caminho onde estar minha views
 //autoload com consign nas rotas e no banco
 
  consign()
-     .include('app/routes')
-     .then('config/db_connection.js')
+     .include('app/routes')   //autoload automatico de todas as rotas
+     .then('config/db_connection.js') //autoload automatico da conexão
+      .then('app/models')  //autoload de todas as models automatico
      .into(app);
 
 module.exports = app;
